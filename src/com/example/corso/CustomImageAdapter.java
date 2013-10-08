@@ -31,7 +31,7 @@ public class CustomImageAdapter extends ArrayAdapter<String> {
 		ImageView imageViewCella = (ImageView)rowView.findViewById(R.id.imageViewCella);
 		TextView textViewCella = (TextView)rowView.findViewById(R.id.textViewCella);
 		
-		/*Recupero l'id della foto e la setto*/
+		/*Recupero l'id della foto e la setto l'immagine*/
 		//int fotoId =context.getResources().getIdentifier("com.example.corso:drawable/scoiattolo.jpg", null, null);
 		//imageViewCella.setImageResource(fotoId);
 		//altro metodo per fare la stessa cosa, con la differenza che sopra usa identifier
