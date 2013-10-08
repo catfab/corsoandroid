@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dettaglioActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".DettaglioActivity" >
+
+    <TextView
+        android:id="@+id/textViewNomePersona"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/hello_world" />
+
+    <ImageView
+        android:id="@+id/imageViewImmagine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewNomePersona"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="169dp"
+        android:src="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/buttonApri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textViewNomePersona"
+        android:layout_marginBottom="16dp"
+        android:text="Apri" />
+
+</RelativeLayout>
