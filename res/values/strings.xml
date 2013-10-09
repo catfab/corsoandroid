@@ -13,5 +13,6 @@
     <string name="title_activity_dettaglio_web_view">Sito Web</string>
     <string name="title_activity_lista_persone">Lista persone</string>
     <string name="title_activity_creazione_modifica">Creazione/modifica contatto</string>
+    <string name="title_activity_dettaglio_contatto">DettaglioContattoActivity</string>
 
 </resources>

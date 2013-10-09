@@ -9,7 +9,7 @@
     tools:context=".CreazioneModificaActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textViewNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -20,8 +20,8 @@
         android:id="@+id/editTextNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/textViewNome"
+        android:layout_below="@+id/textViewNome"
         android:ems="10" />
 
     <TextView

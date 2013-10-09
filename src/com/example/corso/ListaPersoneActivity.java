@@ -19,7 +19,6 @@ public class ListaPersoneActivity extends Activity {
 
 	private DBAdapter adapter;
 	private Cursor cursor;
-	private ArrayList<Persona> arrayList;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,6 @@ public class ListaPersoneActivity extends Activity {
 		cursor = adapter.fetchAll();
 		
 		final Persona[] arrayPersone = new Persona[cursor.getCount()];
-		arrayList = new ArrayList<Persona>();
 		ArrayList<String> cognomi = new ArrayList<String>(cursor.getCount());
 		
 		int index = 0;
@@ -78,8 +76,12 @@ public class ListaPersoneActivity extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// 
-				Intent intent = new Intent(ListaPersoneActivity.this, CreazioneModificaActivity.class);
-				intent.putExtra("persona", arrayPersone[arg2]);
+				Intent intent = new Intent(ListaPersoneActivity.this, DettaglioContattoActivity.class);
+				
+				Bundle extras = new Bundle();
+				extras.putParcelable("persona", arrayPersone[arg2]);
+				intent.putExtras(extras);
+				
 				startActivity(intent);
 			}
 		});

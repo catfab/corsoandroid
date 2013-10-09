@@ -51,6 +51,10 @@
             android:name="com.example.corso.CreazioneModificaActivity"
             android:label="@string/title_activity_creazione_modifica" >
         </activity>
+        <activity
+            android:name="com.example.corso.DettaglioContattoActivity"
+            android:label="@string/title_activity_dettaglio_contatto" >
+        </activity>
     </application>
 
 </manifest>
