@@ -5,11 +5,13 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_seconda">Seconda</string>
-    <string name="bottone">Pulsante</string>
+    <string name="bottone">Cambia indirizzo</string>
     <string name="urlDefault">http://www.esprinet.com</string>
-    <string name="vai_alla_lista">Vai alla lista</string>
+    <string name="vai_alla_lista">Vai alla lista fissa</string>
     <string name="title_activity_lista">Lista</string>
     <string name="title_activity_dettaglio">Dettaglio</string>
     <string name="title_activity_dettaglio_web_view">Sito Web</string>
+    <string name="title_activity_lista_persone">Lista persone</string>
+    <string name="title_activity_creazione_modifica">Creazione/modifica contatto</string>
 
 </resources>

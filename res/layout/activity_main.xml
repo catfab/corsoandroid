@@ -12,7 +12,7 @@
     tools:context=".MainActivity" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/editTextNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -26,8 +26,8 @@
         style="@style/bottone_azzurro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/editTextNome"
+        android:layout_below="@+id/editTextNome"
         android:layout_marginTop="15dp"
         android:text="@string/bottone" />
 
@@ -40,5 +40,35 @@
         android:layout_below="@+id/buttonCambia"
         android:layout_marginTop="20dp"
         android:text="@string/vai_alla_lista" />
+
+    <Button
+        android:id="@+id/buttonPrefs"
+        style="@style/bottone_azzurro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonLista"
+        android:layout_centerVertical="true"
+        android:text="Salva" />
+
+    <Button
+        android:id="@+id/buttonSalva"
+        style="@style/bottone_azzurro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonPrefs"
+        android:layout_below="@+id/buttonPrefs"
+        android:layout_marginTop="24dp"
+        android:text="Vai alla lista" />
+
+    <Button
+        android:id="@+id/buttonCreaContatto"
+        style="@style/bottone_azzurro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonSalva"
+        android:layout_alignBottom="@+id/buttonSalva"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/buttonSalva"
+        android:text="Crea contatto" />
 
 </RelativeLayout>

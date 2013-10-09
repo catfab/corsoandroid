@@ -40,7 +40,16 @@
         </activity>
         <activity
             android:name="com.example.corso.DettaglioWebViewActivity"
-            android:label="@string/title_activity_dettaglio_web_view" >
+            android:label="@string/title_activity_dettaglio_web_view"
+            android:parentActivityName="com.example.corso.ListaActivity" >
+        </activity>
+        <activity
+            android:name="com.example.corso.ListaPersoneActivity"
+            android:label="@string/title_activity_lista_persone" >
+        </activity>
+        <activity
+            android:name="com.example.corso.CreazioneModificaActivity"
+            android:label="@string/title_activity_creazione_modifica" >
         </activity>
     </application>
 
