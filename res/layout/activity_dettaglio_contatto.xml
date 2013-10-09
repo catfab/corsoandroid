@@ -48,4 +48,14 @@
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <Button
+        android:id="@+id/buttonTelefona"
+        style="@style/bottone_azzurro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewNumeroDiTelefono"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:text="Chiama" />
+
 </RelativeLayout>
