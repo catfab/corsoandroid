@@ -16,11 +16,11 @@ public class DBAdapter {
 	
 	private static final String NOME_TABELLA = "contatti";
 	
-	private static final String KEY_IDCONTATTO = "_id";
-	private static final String KEY_NOME = "nome";
-	private static final String KEY_COGNOME = "cognome";
-	private static final String KEY_DDN = "ddn";
-	private static final String KEY_NUMERO = "numero";
+	public static final String KEY_IDCONTATTO = "_id";
+	public static final String KEY_NOME = "nome";
+	public static final String KEY_COGNOME = "cognome";
+	public static final String KEY_DDN = "ddn";
+	public static final String KEY_NUMERO = "numero";
 	
 	public DBAdapter(Context context) {
 		this.context = context;
