@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import UtilsDB.DBAdapter;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.view.Menu;
@@ -68,7 +70,7 @@ public class ListaPersoneActivity extends Activity {
 		
 		ArrayAdapter arrAdapter = new ArrayAdapter(getBaseContext(), android.R.layout.simple_list_item_1, cognomi);
 		
-		ListView lista = (ListView)findViewById(R.id.listViewPersone);
+		final ListView lista = (ListView)findViewById(R.id.listViewPersone);
 		lista.setAdapter(arrAdapter);
 		lista.setOnItemClickListener( new AdapterView.OnItemClickListener() {
 
@@ -83,6 +85,70 @@ public class ListaPersoneActivity extends Activity {
 				intent.putExtras(extras);
 				
 				startActivity(intent);
+			}
+		});
+		
+		lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+					int i, long arg3) {
+				final CharSequence[] scelteDisponibili = {"Modifica", "Cancella", "Annulla"};
+				final int posizione = i;
+				AlertDialog.Builder builder = new AlertDialog.Builder(ListaPersoneActivity.this);
+				builder.setTitle("Azioni disponibili");
+				builder.setItems(scelteDisponibili, new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						Persona personaOnEdit = arrayPersone[posizione];
+						
+						switch (which) {
+						case 0:
+							//modifica
+							Intent intent = new Intent(ListaPersoneActivity.this, CreazioneModificaActivity.class);
+							
+							Bundle extras = new Bundle();
+							
+							extras.putParcelable("persona", personaOnEdit);
+							intent.putExtras(extras);
+							
+							startActivity(intent);
+							break;
+						case 1:
+							//cancella
+							ArrayAdapter tempArrayAdapter = (ArrayAdapter)lista.getAdapter();
+							long idDaCancellare = personaOnEdit.getIdPersona();
+							
+							//rimuove il contatto dall'adapter
+							tempArrayAdapter.remove(tempArrayAdapter.getItem(posizione));
+							
+							try {
+								adapter.open();
+							} catch (SQLException e) {
+							}
+							
+							adapter.deleteContatto(idDaCancellare);
+							
+							//notifica all'arrayadapter il cambio dei dati
+							tempArrayAdapter.notifyDataSetChanged();
+							
+							adapter.close();
+							
+							break;
+						case 2:
+							//annulla
+							break;
+						default:
+							break;
+						}
+					}
+				});
+				
+				AlertDialog alertDialog = builder.create();
+				alertDialog.show();
+				
+				return false;
 			}
 		});
 	}

@@ -16,41 +16,33 @@
         android:layout_alignParentTop="true"
         android:text="Nome" />
 
-    <EditText
-        android:id="@+id/editTextNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewNome"
-        android:layout_below="@+id/textViewNome"
-        android:ems="10" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextNome"
+        android:layout_alignLeft="@+id/textViewNome"
         android:layout_below="@+id/editTextNome"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="19dp"
         android:text="Cognome" />
 
     <EditText
         android:id="@+id/editTextCognome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/textView2"
         android:ems="10" >
 
         <requestFocus />
     </EditText>
 
-    <TextView
-        android:id="@+id/textView3"
+    <EditText
+        android:id="@+id/editTextNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextCognome"
-        android:layout_marginTop="22dp"
-        android:text="Data di nascita" />
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textViewNome"
+        android:ems="10" />
 
     <EditText
         android:id="@+id/editTextDataNascita"
@@ -61,12 +53,22 @@
         android:ems="10" />
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/editTextCognome"
+        android:layout_marginTop="22dp"
+        android:text="Nascita" />
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editTextDataNascita"
-        android:layout_centerVertical="true"
-        android:text="Numero di telefono" />
+        android:layout_below="@+id/editTextDataNascita"
+        android:layout_marginTop="19dp"
+        android:text="Telefono" />
 
     <EditText
         android:id="@+id/editTextNumTelefono"
@@ -81,9 +83,9 @@
         style="@style/bottone_azzurro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextNumTelefono"
         android:layout_below="@+id/editTextNumTelefono"
-        android:layout_marginTop="14dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
         android:text="Salva" />
 
 </RelativeLayout>
