@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -168,7 +169,8 @@ public class MainActivity extends Activity {
 			ArrayList<Persona> arrayParsato = parser.getParsedData();
 			
 			for (Persona persona : arrayParsato) {
-				if (dbAdapter.fetchContattiByFilter("numero = " + persona.getNumTelefono()) == null) {
+				Cursor cursore =dbAdapter.fetchContattiByFilter("numero = " + persona.getNumTelefono()); 
+				if (cursore == null || cursore.getCount() == 0) {
 					dbAdapter.creaContatto(persona.getNome(), persona.getCognome(), persona.getDataNascita(), persona.getNumTelefono());
 				}
 				else {
@@ -284,8 +286,16 @@ public class MainActivity extends Activity {
                 Log.d("dproj", "exit download from url");
 
             } else {
-                Toast.makeText(MainActivity.this,"Impossibile effettuare il download",
-                        Toast.LENGTH_SHORT).show();
+            	//Metodo che effettua un run sul UI thread (ovvero il main thread)
+            	runOnUiThread(new Thread(new Runnable() {
+					
+					@Override
+					public void run() {
+						Toast.makeText(MainActivity.this,"Impossibile effettuare il download",
+		                        Toast.LENGTH_SHORT).show();
+						
+					}
+				}));
             }
 		}
 	}
